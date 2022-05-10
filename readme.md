@@ -5,8 +5,10 @@ create it, run `make calc` and to delete the generated files run `make clean`.
 
 To compare it to a set of test cases, run `make calc && ./calc < test_exps.txt | diff -y test_expectation.txt -`
 
+## Next Steps
+Follow this [stackoverflow response](https://stackoverflow.com/questions/39133560/how-to-parse-a-c-string-with-bison) 
+to parse input from strings rather than only the command line (to allow for 
+easier and repeatable testing).
 
 ## Issues
-it evaluates from right to left, so there are errors with integer division
-
-link: https://replit.com/@JackNugent/BisonFlex-Calculator#calc.l
+it evaluates from right to left, so there are errors with integer division.
