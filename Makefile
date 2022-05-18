@@ -6,7 +6,7 @@ FLEX = flex
 RM = rm -f
 
 words: words_parse words_lex
-	$(CC) $(LDFLAGS) $(CFLAGS) -o words words.c sds/sds.c out/words.tab.c out/words.yy.c -lm
+	$(CC) $(LDFLAGS) $(CFLAGS) -o words words.c out/words.tab.c out/words.yy.c -lm
 
 words_parse: words.y
 	$(BISON) -d -o out/words.tab.c words.y

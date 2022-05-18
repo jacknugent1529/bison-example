@@ -10,10 +10,8 @@ consisting of any number of words.
 
 The trickiness in using C involves managing the limitations of C's memory scheme
 while parsing. One of these issues that would arise is with stack-allocated strings. 
-For this reason, the sdsnew call is performed to allocate the string on the heap. 
-This uses the [sds library](https://github.com/antirez/sds), which is a rather nice
-library for manipulating strings in C. If you'd prefer to not use this library, you
-could probably use the `strdup` function instead. 
+One way of solving this is to use the `strdup` function which allocates the string
+on the heap.
 
 Another limitation of the C's memory scheme is that there are no resizable arrays
 in the core language. As a result, 

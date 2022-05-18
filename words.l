@@ -2,7 +2,6 @@
 %{
 #include <stdio.h>
 #include "words.tab.h"
-#include "sds/sds.h"
 
 %}
 
@@ -18,7 +17,7 @@ TO   { return TO; }
     /* match groups of alphabetic characters and allocate a string on the stack */
 [a-zA-Z]+    { 
     /* the yylval.word is an item from the union defined in the .y file */
-    yylval.word = sdsnew(yytext); 
+    yylval.word = strdup(yytext); 
     return WORD;
 }
 \n     { return EOL; }
