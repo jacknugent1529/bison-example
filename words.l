@@ -25,5 +25,3 @@ TO   { return TO; }
 [ \t]  { /* ignore whitespace */ }
 
 %%
-
-// .      { printf("Unknown character: %c\n", *yytext); }
