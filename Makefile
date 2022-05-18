@@ -1,20 +1,20 @@
-BIN = calc
+BIN = words
 CC = gcc
 BISON = bison
 CFLAGS = -Wall -I.
 FLEX = flex
 RM = rm -f
 
-calc: calc_parse calc_lex
-	$(CC) $(LDFLAGS) $(CFLAGS) -o calc calculate.c out/calc.tab.c out/calc.yy.c -lm
+words: words_parse words_lex
+	$(CC) $(LDFLAGS) $(CFLAGS) -o words words.c sds/sds.c out/words.tab.c out/words.yy.c -lm
 
-calc_parse: calc.y
-	$(BISON) -d -o out/calc.tab.c calc.y
+words_parse: words.y
+	$(BISON) -d -o out/words.tab.c words.y
 
-calc_lex: calc.l
-	$(FLEX) -o out/calc.yy.c calc.l
+words_lex: words.l
+	$(FLEX) -o out/words.yy.c words.l
 
 clean:
 	$(RM) out/* $(BIN)
 
-.PHONY: calc clean
+.PHONY: words clean
